@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Map.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <title>Lombok</title>
+    <style>
+        body {
+            background-color: #060010;
+            padding-top: 56px;
+        }
+        .main {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 40px;
+            padding-bottom: 30px;
+        }
+        .info, .travel, .activity, .other {
+            width: 500px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: white;
+        }
+        .lombok {
+            height: 500px;
+            width: 900px;
+            float: right;
+            padding-left: 20px;
+        }
+        .navbar {
+            background-color: darkslategrey;
+        }
+        h1, h2, h3, p, li {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   <!-- Navigation Bar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Indonesia Guide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+          
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Destinations
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="alldestinations.html">All destinations</a>              
+              <!-- Add more destinations as needed -->
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="Yogyakarta.html">Yogyakarta</a>
+              <a class="dropdown-item" href="bandung.html">Bandung</a>
+              <a class="dropdown-item" href="malang.html">Malang</a>
+              <div class="dropdown-divider"></div>           
+              <a class="dropdown-item" href="bali.html">Bali</a>              
+              <a class="dropdown-item" href="lombok.html">Lombok</a>             
+            </div>
+          </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="Map.html">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bahasa.html">Learn Bahasa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacts.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="main">
+    <div id="lombok">
+        <h1><u>Lombok</u></h1>
+        <img class="lombok" src="images/lombok.jpg" alt="Lombok Island">
+    </div>
+    <div class="info">
+        <p>Lombok, an enchanting island located east of Bali, offers a tranquil escape with its pristine beaches, majestic Rinjani volcano, and lush forests. Known for its relaxed atmosphere and less commercialized environment compared to Bali, Lombok is a paradise for those seeking peace and natural beauty. The island is also home to the indigenous Sasak culture, adding a unique cultural dimension to your visit.</p>
+    </div>
+    <div class="travel">
+        <h2>How to Get There</h2>
+        <p>Lombok International Airport connects the island with various domestic and international destinations. A roundtrip from Jakarta is around 2,5-3 million rubias and takes 2 hours. </p>
+        <p>Ferries and speedboats operate from Bali, offering scenic sea journeys. The ferryride is under 2 hours and costs around 400k rubias.</p>
+    </div>
+    <div class="activity">
+        <h2>What to Do?</h2>
+        <p>Explore the Gili Islands for snorkeling and diving, hike the trails of Mount Rinjani, and visit traditional Sasak villages (!!!). Relax on the stunning beaches of Kuta Lombok and enjoy the vibrant local markets and exquisite local cuisine.</p>
+    </div>
+    <div class="other">
+        <h2>Tips:</h2>
+        <ul>
+            <li>Respect local customs and traditions, especially in rural and traditional areas.</li>
+            <li>Rent a scooter or a car to explore the island at your own pace.</li>
+            <li>Try local delicacies like Ayam Taliwang and Bebalung Soup.</li>
+            <li>Stay hydrated and protect yourself from the sun.</li>
+        </ul>
+    </div>
+  </section>
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Indonesia Guide 2023</p>
+    </div>
+  </footer>
+</body>
+</html>
