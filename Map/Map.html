@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map-container {
+            position: relative;
+        }
+
+        #map {
+            height: 895px;
+            width: 1920px;
+        }
+        #map-container {
+          height: 100px;
+          padding-top: 50px;
+        }
+        .trapezium {
+            height: 100px;
+            width: 700px;
+            position: absolute;
+            top: -10px;
+            left: 570px;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <img class="trapezium" src="trapezium.png">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Indonesia Guide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Map</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var cities = [
+
+
+
+{ name: "Malang", coordinates: [-7.9778, 112.6347], description:"Malang is a vibrant city located in East Java, Indonesia. Known for its pleasant climate and beautiful landscapes, Malang is surrounded by lush green hills and mountains. The city is characterized by its colonial architecture, tree-lined streets, and a mix of modern and traditional culture. Malang is a popular destination for tourists who are attracted to its historical sites, such as the Singosari and Majapahit temples, as well as its vibrant arts and culinary scene. The city also serves as a gateway to the stunning landscapes of East Java, including the famous Mount Bromo.", website:"malang.html" },
+{ name: "Tangerang", coordinates: [-6.2297, 106.6894], description:"Page Coming Soon!"},
+{ name: "Yogyakarta", coordinates: [-7.7956, 110.3695], description:"Yogyakarta, often referred to as 'Jogja,' is a cultural gem in Indonesia, renowned for its rich heritage, artistic traditions, and historical landmarks. Home to the royal palace of the Sultan, Kraton Yogyakarta, the city reflects Javanese architecture and royal influence. Visitors can explore the intricate Hindu temples of Prambanan, the vibrant Malioboro Street market, and experience the lively arts scene, including traditional puppet shows and batik workshops. Yogyakarta's charm extends to serving as a gateway to the majestic Borobudur Temple, making it a must-visit destination for those seeking a harmonious blend of history, culture, and natural beauty.", website:"yogyakarta.html"},
+{ name: "Bali", coordinates: [-8.4095, 115.1889], description:"Bali is a tropical paradise and one of Indonesia's most popular tourist destinations. Known for its stunning beaches, lush landscapes, and vibrant culture, Bali attracts visitors seeking a blend of relaxation and adventure. The island is renowned for its picturesque rice terraces, ancient temples, and vibrant arts scene. Visitors can experience traditional Balinese ceremonies, indulge in delicious cuisine, and explore the underwater world through snorkeling or diving. Bali's unique charm lies in its spiritual atmosphere, where Hindu traditions are deeply woven into everyday life. Whether you're seeking serene beaches, cultural encounters, or thrilling activities, Bali offers a diverse and enchanting escape.", website:"bali.html"},
+{ name: "Batam", coordinates: [1.1062, 104.0313], description:"Page Coming Soon!" },
+{ name: "Bogor", coordinates: [-6.5946, 106.7894], description:"Page Coming Soon!" },
+{ name: "Jakarta", coordinates: [-6.2088, 106.8272], description:"Page Coming Soon!" },
+{ name: "Surabaya", coordinates: [-7.2575, 112.7480], description:"Page Coming Soon!" },
+{ name: "Bandung", coordinates: [-6.9175, 107.6191], description: "Bandung, often referred to as the 'Paris of Java,' is a vibrant city in Indonesia known for its cool climate, distinctive architecture, and creative atmosphere. Nestled amidst lush tea plantations and surrounded by volcanic mountains, Bandung offers a picturesque setting. The city is famous for its Art Deco and Dutch colonial architecture, visible in landmarks like Gedung Sate and the Bandung Institute of Technology. Bandung is a hub of creativity, with numerous art galleries, trendy cafes, and fashion boutiques. The city's lively atmosphere extends to its bustling markets, such as the colorful Pasar Baru. Visitors can also explore the scenic landscapes surrounding Bandung, including Tangkuban Perahu volcano and the serene Ciwidey tea plantations. Bandung is a destination that seamlessly combines natural beauty, cultural richness, and modern urban flair.", website: "bandung.html"},
+{ name: "Yogyakarta", coordinates: [-7.7971, 110.3683], description:"Yogyakarta, often referred to as 'Jogja,' is a cultural gem in Indonesia, renowned for its rich heritage, artistic traditions, and historical landmarks. Home to the royal palace of the Sultan, Kraton Yogyakarta, the city reflects Javanese architecture and royal influence. Visitors can explore the intricate Hindu temples of Prambanan, the vibrant Malioboro Street market, and experience the lively arts scene, including traditional puppet shows and batik workshops. Yogyakarta's charm extends to serving as a gateway to the majestic Borobudur Temple, making it a must-visit destination for those seeking a harmonious blend of history, culture, and natural beauty.", website:"yogyakarta.html"},
+];
+
+
+var map = L.map('map', {
+            center: [-2.5, 120],
+            zoom: 5,
+            minZoom: 5,
+            maxZoom: 12,
+            maxBounds: [[-11, 95], [6, 141]]
+        });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var customIcon = L.icon({
+            iconUrl: 'marker.png', 
+            iconSize: [20 , 40],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            shadowSize: [41, 41],
+        });
+
+        cities.forEach(function (city) {
+    var marker = L.marker(city.coordinates, { icon: customIcon }).addTo(map);
+
+    var popupContent = '<h5>' + city.name + '</h5>';
+
+    if (city.description) {
+        popupContent += '<p>' + city.description + ' <a href="' + city.website + '" target="_blank">Read more</a></p>';
+    }
+
+    marker.bindPopup(popupContent);
+});
+
+    </script>
+</body>
+</html>
+
+
